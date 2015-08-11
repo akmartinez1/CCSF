@@ -1,0 +1,17 @@
+/*
+Alan K.Martinez
+amart227@mail.ccsf.edu
+
+CS 111B Java Programming Fundamentals
+Tuesday and Thursday 1:10pm to 3:00pm
+C. Conner
+Batmale Hall, Room 413
+
+Home Work Assignment #
+Due Date
+
+Filename
+
+GitHub:  https://github.com/akmartinez1/CCSF-CS110B--VS-
+
+*/
