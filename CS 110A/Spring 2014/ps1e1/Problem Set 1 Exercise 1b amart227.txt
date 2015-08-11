@@ -1,0 +1,22 @@
+Alan K. Martinez
+amart227@mail.ccsf.edu
+
+CS110A Introduction to C++ Programming
+M & Th 9:05am - 11:00am
+
+
+Problem Set 1b
+Peanut Butter & Jelly Algorithm
+
+1.  Gather ingredients and materials for Peanut Butter & Jelly Sandwich.
+	a.  Bread
+	b.  Peanut
+	c.  Jelly
+	d.  2 Knives
+	e.  Plate
+	f.  Toaster (optional)
+2.  Toast bread to personal preference (optional).
+3.  Gather peanut butter on knife and spread on 1 piece of bread.
+4.  Gather jelly on knife and spread on separate piece of bread.
+5.  Join pieces of briend and join togehter with peanut butter and jelly facing each other.
+6.  Enjoy Sandwich

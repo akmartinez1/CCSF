@@ -1,0 +1,16 @@
+Alan K. Martinez
+amart227@mail.ccsf.edu
+
+CS110A Introduction to C++ Programming
+M & Th 9:05am - 11:00am
+
+Problem Set 1a
+From CCSF to Home Algorithm
+
+1.  Exit Batmale Hall and walk toward Ocean Blvd. & Phelan Muni Stop.
+2.  Board K-Line MUNI Light Rail Inbound towards Downtown San Fracisco.
+3.  Proceed on K-Line MUNI to West Portal Station.
+4.  Deboard K-Line MUNI at West Portal Station and transfer to L-Taraval SF Zoo.
+5.  Continue on L-Taraval SF Zoo until Taraval & 40th.
+6.  Walk from Taraval & 40th to 40th & Yorba.
+7.  Arrive at Home.
