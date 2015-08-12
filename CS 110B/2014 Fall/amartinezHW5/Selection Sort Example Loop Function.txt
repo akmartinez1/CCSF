@@ -1,0 +1,41 @@
+Selection Sort Example Loop Function
+
+//sorts array of length size using selection sort algorithm
+
+void selectionSort(int array[], int size)
+{
+	int lowestValue, lowestPosition;
+	
+	for (int i=0; i<size-1; i++)
+	{
+		//first, find position of lowest element in positions i through size-1
+		lowestValue = array[i];
+		lowestPosition = i;
+
+		for (int j=i+1; j<size; j++)
+		{
+			if (array[j]<lowestValue)
+			{
+				lowestPosition = j;
+				lowestValue = array[j];
+			}
+		}
+
+		//now, swap the lowest element we found with element at position i
+		swapper(array[i],array[lowestPosition]);
+	}
+}
+
+
+//Example loop to exchange values
+
+//swaps ints passed in by reference
+void swapper(int& x, int& y)
+{
+int temp;
+
+temp = x;
+x = y;
+y = temp;
+
+}

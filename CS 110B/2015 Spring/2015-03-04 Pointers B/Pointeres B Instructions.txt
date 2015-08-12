@@ -1,0 +1,15 @@
+Programming Exercise B
+• The local taqueria wants you to write a program which tracks the
+number of burritos they sell each day and help them analyze their
+business. Unlike last time, they don't know the types of burritos
+they will sell, or how many types of burritos there are, until the day
+of sale.
+• Your program should prompt the user for the number of different
+types sold, and then get the names of types, e.g. carnitas, chicken,
+vegetarian, etc. Then, ask the user for the number of burritos sold
+of each type of that day. Print out a daily report listing sales for
+each burrito type and total number of burritos sold.
+• You must use two dynamically allocated arrays (i.e. use new to
+create memory for them, and delete to delete them when
+finished). You need one string array to store the names of the
+burrito types, and one int array to store the number of burritos sold.

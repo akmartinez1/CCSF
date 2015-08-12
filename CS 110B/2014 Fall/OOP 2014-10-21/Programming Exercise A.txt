@@ -1,0 +1,14 @@
+Programming Exercise A
+
+Implement the Rectangle class as discussed today.
+
+Enhance the Rectangle class with new member functions:
+
+double getPerimiter()
+	returns the perimeter of the rectangle, i.e. 2*width+2*length
+
+bool isSquare()
+	returns true if the rectangle is a square, i.e. length is equal to width
+
+Demonstrate your class works with a main function, that instantiates a 
+Rectangle object, and shows .sample output for its functions working

@@ -1,0 +1,15 @@
+Programming Exercise A
+• The local taqueria has decided they need to raise their prices. In
+order to soften the blow to their customers, they also want to rename
+all their burritos to make them sound more desirable.
+• Your program should create two arrays in main() - one string array
+with 3 burrito types and one float array with 3 associated prices,
+defined below:
+string names[] = {"Carnitas", "Pollo", "Veggie"};
+float prices[] = {6.95, 6.25, 5.95};
+• Write a function which takes a string pointer and a float pointer as
+parameters. It should add " Especial" to the end of each name, and
+add 1 to each price. Do not use array notation, i.e. names[0], use
+only pointer notation, i.e. *names or *(names+0). Demonstrate using
+the function by calling from main and printing out the new menu.
+raisePrices(string *names, float *prices)

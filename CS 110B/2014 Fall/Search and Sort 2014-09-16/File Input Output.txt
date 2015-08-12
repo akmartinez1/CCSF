@@ -1,0 +1,45 @@
+File Input/Output
+
+Until now we have entered data manually or declared initialized arrays. We can
+also use a file to read in data or write out data.
+
+Need to #include <fstream>
+
+Opening file for input:
+
+	ifstream inputFile;
+	inputFile.open("creditcards.txt");
+
+Opening file for output:
+
+	ofstream outputFile;
+	outputFile.open("output.txt");
+
+
+Closing file when done:
+
+	inputFile.close();
+	outputFile.close();
+
+File input example.
+
+Lets assume we have a file called creditcard.txt which contains a credit
+card number stored as a long int -- the following code snippet reads it in:
+
+	long int creditCard;
+	ifstream inputFile;
+
+	inputFile.open("creditcard.txt");
+	
+	if (!inputFile)
+	{
+		cout << "ERROR: Invalid filename\n";
+		exit(1);
+	}
+
+	inputFile >> creditCard;
+	
+	cout << "The credit card number is: " << creditCard << endl;
+	
+	inputFile.close();
+

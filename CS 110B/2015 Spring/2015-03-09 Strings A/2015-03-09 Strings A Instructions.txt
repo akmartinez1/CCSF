@@ -1,0 +1,10 @@
+Programming Exercise A
+Write a program which can check a password to see if
+it is in the ACRC/hills initial password format, i.e.
+mmmDDYY.fl, where:
+• mmm - three lowercase characters for month, e.g.
+"mar" is March
+• DD - two digits for day
+• YY - two digits for year
+• . - a period
+• fl - two lowercase characters for first and last initials

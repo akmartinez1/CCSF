@@ -1,0 +1,3 @@
+﻿  amartinezHW2.cpp
+c:\users\alan k. martinez\documents\visual studio 2013\projects\ccsf\ccsf-cs110b--vs--retake\amartinezhw2\amartinezhw2\amartinezhw2.cpp(334): warning C4244: 'initializing' : conversion from 'time_t' to 'int', possible loss of data
+  amartinezHW2.vcxproj -> C:\Users\Alan K. Martinez\Documents\Visual Studio 2013\Projects\CCSF\CCSF-CS110B--VS--Retake\amartinezHW2\Debug\amartinezHW2.exe
