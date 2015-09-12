@@ -1,0 +1,251 @@
+SQL> start a03_martinez.sql
+SQL> set feedback 1
+SQL> set pagesize 999
+SQL> set trimspool on
+SQL> set linesize 200
+SQL> set tab off
+SQL> clear columns
+SQL> 
+SQL> 
+SQL> /* Alan K. Martinez */
+SQL> 
+SQL> /*  TASK 00 */
+SQL> select user, sysdate
+  2  from dual;
+
+USER                           SYSDATE
+------------------------------ ---------
+AMART227                       10-SEP-15
+
+1 row selected.
+
+SQL> 
+SQL> /*  TASK 01 */
+SQL> select
+  2    cl_postal_code
+  3  ||': '
+  4  ||cl_city
+  5  ||' '
+  6  ||cl_state
+  7  as "Location"
+  8  from vt_clients;
+
+Location
+------------------------------------------
+92101: San Diego CA
+45402: Dayton OH
+10006: New York NY
+45502: Springfield OH
+71601: Big Rock AR
+58503: Big Rock ND
+65802: Springfield MO
+71601: Big Rock AR
+21579: Spring Valley MA
+87801: San Francisco NM
+21555: Boston MA
+62701: Springfield IL
+94101: San Francisco CA
+62701: Springfield IL
+94112: San Francisco CA
+
+15 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 02  */
+SQL> select
+  2     cl_name_first
+  3  ,  cl_name_last
+  4  ,  cl_phone
+  5  from vt_clients
+  6  where cl_phone is not null
+  7  order by cl_id;
+
+CL_NAME_FIRST             CL_NAME_LAST              CL_PHONE
+------------------------- ------------------------- ------------
+James                     Carter                    510.258.4546
+Jack                      Dalrymple                 701.328.2725
+Coleman                   Hawkins                   937.258.5645
+Theo                      Monk                      212.582.6245
+                          Biederbecke               217.239.6945
+                          Biederbecke               415.239.6945
+Sue                       Biederbecke               217.239.6875
+Sam                       Biederbecke               415.239.6875
+Dave                      Brubeck                   258.257.2727
+Stanley                   Turrentine                619.231.1515
+
+10 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 03 */
+SQL> select distinct
+  2     srv_id
+  3  from vt_exam_details
+  4  where ex_fee > 50;
+
+    SRV_ID
+----------
+       604
+       625
+       605
+       607
+       523
+       108
+       110
+       603
+       615
+      4601
+       101
+       105
+       104
+       602
+       106
+
+15 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 04 */
+SQL> select
+  2     stf_name_first
+  3  ,  stf_name_last
+  4  ,  stf_id
+  5  from vt_staff
+  6  where stf_job_title is null;
+
+no rows selected
+
+SQL> 
+SQL> 
+SQL> /*  TASK 05 */
+SQL> select
+  2     srv_id as "Service ID"
+  3  ,  srv_type as "Service Type"
+  4  ,  srv_desc as "Description"
+  5  ,  srv_list_price as "Curr Price"
+  6  ,  srv_list_price * 1.15 as "Incr Price"
+  7  from vt_services
+  8  where srv_type not in ('office visit');
+
+Service ID Service Type              Description                                        Curr Price Incr Price
+---------- ------------------------- -------------------------------------------------- ---------- ----------
+       101 treatment                 Dental Cleaning-Canine                                     50       57.5
+       110 treatment                 Dental Cleaning-Other                                     100        115
+       225 medicine                  Feline PCR Series                                          75      86.25
+       102 treatment                 Dental Cleaning-Feline                                     45      51.75
+       400 treatment                 Hazardous Materials Disposal                             10.5     12.075
+       106 treatment                 Routine Exam-Bird                                          75      86.25
+       551 medicine                  First Feline PCR                                         35.5     40.825
+       552 medicine                  Second Feline PCR                                       25.15    28.9225
+       553 medicine                  Third Feline PCR                                        25.85    29.7275
+      1002 medicine                  Scaly Mite Powder                                        2533    2912.95
+      1003 treatment                 Intestinal Parasite Screen                                 26       29.9
+      4601 treatment                 Feline Behaviour Modification Consultation                275     316.25
+       687 medicine                  Vitamin E- Concentrated                                 45.99    52.8885
+       748 medicine                  Preds-liver                                              29.5     33.925
+       749 medicine                  Preds-chicken                                            29.5     33.925
+       602 treatment                 General Anethesia 1 hour                                  222      255.3
+       603 treatment                 Feline Dental X_ray                                        78       89.7
+       604 treatment                 Dental Scaling                                            109     125.35
+       605 treatment                 Tooth extraction Level 1                                  535     615.25
+       606 treatment                 Tooth extraction Level 2                                   40         46
+       607 treatment                 Tooth extraction Level 3                                   57      65.55
+       612 medicine                  Buprenex oral drops 1 ml                                25.91    29.7965
+       613 treatment                 Hospital stay- short                                       47      54.05
+       615 medicine                  antibiotics                                              78.3     90.045
+       625 treatment                 CBC and scan                                              155     178.25
+
+25 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 06 */
+SQL> select
+  2     cl_id
+  3  ,  an_id
+  4  ,  an_name
+  5  from vt_animals
+  6  where an_type in ('hamster', 'capybara', 'porcupine' , 'dormouse')
+  7  order by cl_id, an_id;
+
+     CL_ID      AN_ID AN_NAME
+---------- ---------- -------------------------
+      1825      16002 Fritz
+      1825      21005 Koshka
+      1825      21006 Koshka
+      3560      12038 Gutsy
+      5699      17002 Fritzchen
+
+5 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 07 */
+SQL> select distinct
+  2     cl_id
+  3  ,  an_type
+  4  from vt_animals
+  5  where an_type in ('snake', 'chelonian', 'crocodilian', 'lizard')
+  6  order by cl_id;
+
+     CL_ID AN_TYPE
+---------- -------------------------
+       411 lizard
+      1852 snake
+      5699 chelonian
+      5699 lizard
+      5699 snake
+      7152 lizard
+
+6 rows selected.
+
+SQL> 
+SQL> /*  TASK 08 */
+SQL> select
+  2     cl_id
+  3  ,  an_id
+  4  ,  an_name
+  5  ,  an_dob
+  6  from vt_animals
+  7  where an_type not in ('snake', 'chelonian', 'crocodilian', 'lizard'
+  8  , 'hamster', 'capybara', 'porcupine' , 'dormouse')
+  9  order by an_dob desc;
+
+     CL_ID      AN_ID AN_NAME                   AN_DOB
+---------- ---------- ------------------------- ---------
+      5689      21205 Manfried                  30-MAR-15
+    408763      21307 Buddy                     27-JUL-14
+    408763      21306 Shadow                    27-JUL-14
+    408763      21305 Spot                      27-JUL-14
+      1852      21320 Morris                    11-JUN-14
+      1825      16043 Ursula                    06-JUN-14
+      1825      16044 Triton                    06-JUN-14
+      1852      21321 Morton                    03-JUN-14
+      1825      16003 Ursula                    06-FEB-13
+       411      21001 Yoggie                    22-JAN-13
+      1852      21318 Waldrom                   11-JUN-12
+      1852      21315 Baldric                   11-JUN-12
+      4534      11015 Kenny                     23-FEB-12
+      4534      11025                           01-FEB-12
+      1852      21314 Adalwine                  11-JUN-11
+      1852      21317 Manfried                  11-JUN-11
+      1852      21316 Etta                      11-JUN-10
+      3560      10002 Gutsy                     15-APR-10
+       411      19845 Pinkie                    02-FEB-09
+      6897      16004 Napper                    06-JUN-06
+       411      15165 Burgess                   20-NOV-05
+      4534      11029                           01-OCT-05
+       411      21003 Calvin Coolidge           18-JUN-04
+      1825      21002 Edger                     02-OCT-02
+      3560      12035 Mr Peanut                 28-FEB-95
+
+25 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 09 */
+SQL> 
+SQL> 
+SQL> /*  TASK 10 */
+SQL> spool off
