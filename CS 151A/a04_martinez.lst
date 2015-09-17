@@ -1,0 +1,297 @@
+SQL> start a04_martinez.sql
+SQL> set feedback 1
+SQL> set pagesize 999
+SQL> set trimspool on
+SQL> set linesize 200
+SQL> set tab off
+SQL> clear columns
+SQL> 
+SQL> 
+SQL> /* Alan K. Martinez */
+SQL> 
+SQL> /*  TASK 00 */
+SQL> select user, sysdate
+  2  from dual;
+
+USER                           SYSDATE
+------------------------------ ---------
+AMART227                       15-SEP-15
+
+1 row selected.
+
+SQL> 
+SQL> /*  TASK 01 */
+SQL> select cl_id,
+  2    an_id,
+  3    an_type,
+  4    an_name
+  5  from vt_animals
+  6  where an_type in ('cat', 'dog')
+  7  and an_dob <= '31-DEC-2009';
+
+     CL_ID      AN_ID AN_TYPE                   AN_NAME
+---------- ---------- ------------------------- -------------------------
+       411      21003 dog                       Calvin Coolidge
+       411      15165 dog                       Burgess
+      6897      16004 cat                       Napper
+       411      19845 dog                       Pinkie
+
+4 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 02  */
+SQL> select ex_id,
+  2    ex_date,
+  3    srv_id,
+  4    ex_fee
+  5  from vt_exam_headers
+  6  join vt_exam_details using (ex_id)
+  7  join vt_animals using (an_id)
+  8  where an_type in ('hamster', 'capybara', 'porcupine', 'dormouse')
+  9  order by ex_id, srv_id;
+
+     EX_ID EX_DATE       SRV_ID     EX_FEE
+---------- --------- ---------- ----------
+      3105 10-OCT-14        110        150
+      3105 10-OCT-14        523       50.5
+      3203 03-NOV-14        524         20
+      3321 17-FEB-15        748          0
+      3322 10-FEB-15        748       29.5
+      3323 25-FEB-15        524         20
+      3323 25-FEB-15        687         45
+      3393 23-DEC-14        748       29.5
+      3393 23-DEC-14        749          0
+      3486 31-DEC-14       4601        275
+      4103 08-JAN-15       4601        275
+      4203 03-AUG-15        524         20
+      4233 03-SEP-15        524         20
+      4243 08-JUN-15       4601        275
+      4255 08-JUL-15       4601        275
+
+15 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 03 */
+SQL> select stf_id,
+  2    stf_name_first||' '||stf_name_last as "STAFF",
+  3    ex_date
+  4  from vt_staff
+  5  join vt_exam_headers using (stf_id)
+  6  join vt_animals using (an_id)
+  7  where an_type not in ('snake', 'chelonian', 'crocodilian', 'lizard', 'bird')
+  8  order by ex_date;
+
+    STF_ID STAFF                                               EX_DATE
+---------- --------------------------------------------------- ---------
+        29 Sandy Helfen                                        10-OCT-14
+        29 Sandy Helfen                                        03-NOV-14
+        15 Eliza Dolittle                                      10-NOV-14
+        15 Eliza Dolittle                                      22-NOV-14
+        15 Eliza Dolittle                                      23-NOV-14
+        15 Eliza Dolittle                                      01-DEC-14
+        15 Eliza Dolittle                                      23-DEC-14
+        29 Sandy Helfen                                        23-DEC-14
+        15 Eliza Dolittle                                      26-DEC-14
+        15 Eliza Dolittle                                      31-DEC-14
+        15 Eliza Dolittle                                      01-JAN-15
+        38 Rhoda Wabich                                        08-JAN-15
+        29 Sandy Helfen                                        10-FEB-15
+        29 Sandy Helfen                                        17-FEB-15
+        29 Sandy Helfen                                        25-FEB-15
+        38 Rhoda Wabich                                        08-JUN-15
+        38 Rhoda Wabich                                        08-JUL-15
+        15 Eliza Dolittle                                      23-JUL-15
+        29 Sandy Helfen                                        03-AUG-15
+        15 Eliza Dolittle                                      23-AUG-15
+        29 Sandy Helfen                                        03-SEP-15
+
+21 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 04 */
+SQL> select cl_id,
+  2    ex_id,
+  3    ex_date,
+  4    srv_id,
+  5    ex_fee
+  6  from vt_clients
+  7  join vt_animals using (cl_id)
+  8  join vt_exam_headers using (an_id)
+  9  join vt_exam_details using (ex_id)
+ 10  where ex_fee not between 50 and 100
+ 11  order by ex_date, srv_id;
+
+     CL_ID      EX_ID EX_DATE       SRV_ID     EX_FEE
+---------- ---------- --------- ---------- ----------
+      5699       3202 03-OCT-14        341         20
+      5699       3105 10-OCT-14        110        150
+      7152       3010 22-OCT-14        104         25
+      7152       3010 22-OCT-14        605        535
+      7152       3001 24-OCT-14        104         25
+      1825       3203 03-NOV-14        524         20
+       411       3513 06-NOV-14        104         30
+      7152       3304 06-NOV-14        341         25
+      7152       3304 06-NOV-14       1003         25
+      5699       3306 06-NOV-14        104         30
+      5699       3306 06-NOV-14        687         45
+      5699       3306 06-NOV-14       1002         25
+      1825       3552 10-NOV-14        308       2.25
+      5699       3514 10-NOV-14        104         30
+      5699       3514 10-NOV-14       1002         15
+      5699       3514 10-NOV-14       1003         25
+       411       3282 23-NOV-14        615      25.25
+      1825       3413 01-DEC-14        308          5
+      1825       3612 23-DEC-14        602        222
+      1825       3612 23-DEC-14        604        109
+      1825       3612 23-DEC-14        606         40
+      1825       3612 23-DEC-14        612      25.91
+      1825       3612 23-DEC-14        613         47
+      1825       3612 23-DEC-14        625        155
+      1825       3393 23-DEC-14        748       29.5
+      1825       3393 23-DEC-14        749          0
+       411       3392 26-DEC-14        398         30
+       411       3392 26-DEC-14        400         21
+       411       3392 26-DEC-14       1003         45
+      7152       3409 27-DEC-14        104         25
+      5699       3411 29-DEC-14        341         20
+      5699       3412 30-DEC-14        341         20
+      1825       3486 31-DEC-14       4601        275
+      1825       4103 08-JAN-15       4601        275
+      3560       3104 09-JAN-15        613         47
+      7152       3325 15-JAN-15        104         25
+      5699       3494 22-JAN-15        104         30
+      5699       3288 31-JAN-15        104         30
+      5699       3288 31-JAN-15        687         45
+      5699       3288 31-JAN-15       1002         25
+      1825       3322 10-FEB-15        748       29.5
+      1825       3321 17-FEB-15        748          0
+      5699       3324 25-FEB-15        104         30
+      5699       3324 25-FEB-15        687         45
+      5699       3324 25-FEB-15       1002         25
+      1825       3323 25-FEB-15        524         20
+      1825       3323 25-FEB-15        687         45
+      1825       4243 08-JUN-15       4601        275
+      1825       4255 08-JUL-15       4601        275
+      1852       4612 23-JUL-15        602        222
+      1852       4612 23-JUL-15        606         40
+      1852       4612 23-JUL-15        612      25.91
+      1825       4203 03-AUG-15        524         20
+      5699       4514 10-AUG-15        104         30
+      5699       4514 10-AUG-15       1002         15
+      5699       4514 10-AUG-15       1003         25
+       411       4282 23-AUG-15        615      25.25
+      1825       4233 03-SEP-15        524         20
+
+58 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 05 */
+SQL> select *
+  2  from vt_services
+  3  where srv_desc like '%Feline%' and srv_desc not like '%Dental%'
+  4  order by srv_type, srv_id;
+
+    SRV_ID SRV_LIST_PRICE SRV_DESC                                           SRV_TYPE
+---------- -------------- -------------------------------------------------- -------------------------
+       225             75 Feline PCR Series                                  medicine
+       551           35.5 First Feline PCR                                   medicine
+       552          25.15 Second Feline PCR                                  medicine
+       553          25.85 Third Feline PCR                                   medicine
+       108             80 Routine Exam-Feline                                office visit
+       308             45 Followup Exam-Feline                               office visit
+      4601            275 Feline Behaviour Modification Consultation         treatment
+
+7 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 06 */
+SQL> select distinct cl_id,
+  2    cl_name_last
+  3  from vt_clients
+  4  join vt_animals using (cl_id)
+  5  where an_type = 'dog'
+  6  order by cl_id;
+
+     CL_ID CL_NAME_LAST
+---------- -------------------------
+       411 Carter
+      1825 Harris
+      5689 Biederbecke
+    408763 Turrentine
+
+4 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 07 */
+SQL> select distinct cl_id,
+  2    cl_name_last
+  3  from vt_clients
+  4  join vt_animals using (cl_id)
+  5  where an_type != 'dog'
+  6  order by cl_id;
+
+     CL_ID CL_NAME_LAST
+---------- -------------------------
+       411 Carter
+      1825 Harris
+      1852 Dalrymple
+      3560 Monk
+      4534 Montgomery
+      5699 Biederbecke
+      6897 Drake
+      7152 Brubeck
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 08 */
+SQL> select distinct cl_id,
+  2    cl_name_last
+  3  from vt_clients
+  4  join vt_animals using (cl_id)
+  5  where an_type in ('hamster', 'capybara', 'porcupine', 'dormouse')
+  6  order by cl_id;
+
+     CL_ID CL_NAME_LAST
+---------- -------------------------
+      1825 Harris
+      3560 Monk
+      5699 Biederbecke
+
+3 rows selected.
+
+SQL> 
+SQL> 
+SQL> /*  TASK 09 */
+SQL> select distinct cl_id,
+  2    cl_name_last
+  3  from vt_clients
+  4  join vt_animals using (cl_id)
+  5  where an_type not in ('hamster', 'capybara', 'porcupine', 'dormouse')
+  6  order by cl_id;
+
+     CL_ID CL_NAME_LAST
+---------- -------------------------
+       411 Carter
+      1825 Harris
+      1852 Dalrymple
+      3560 Monk
+      4534 Montgomery
+      5689 Biederbecke
+      5699 Biederbecke
+      6897 Drake
+      7152 Brubeck
+    408763 Turrentine
+
+10 rows selected.
+
+SQL> 
+SQL> /*  TASK 10 */
+SQL> spool off
