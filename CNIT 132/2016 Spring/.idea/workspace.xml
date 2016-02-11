@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a154af5-29a0-42be-aefc-957e1b65270d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../CS 111B/2016 Spring/Classroom Practice/src/cp_2016_02_08_01.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../CS 111B/2016 Spring/Classroom Practice/src/cp_2016_02_08_02.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../CS 111B/2016 Spring/Homework/src/hw_2016_02_08_q21.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../CS 111B/2016 Spring/Homework/src/hw_2016_02_08_q28.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myfirst.html" afterPath="$PROJECT_DIR$/myfirst.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../CS 111B/2016 Spring/Classroom Practice/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../CS 111B/2016 Spring/Classroom Practice/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../CS 111B/2016 Spring/Homework/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../CS 111B/2016 Spring/Homework/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homework1.html" afterPath="$PROJECT_DIR$/homework1.html" />
     </list>
     <ignored path="2016 Spring.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,9 +30,22 @@
       <file leaf-file-name="akmartinez.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/akmartinez.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-11.875">
               <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homework1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/homework1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+              <folding>
+                <element signature="n#style#0;n#h1#0;n#BODY#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#p#2;n#BODY#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,6 +79,7 @@
       <list>
         <option value="$PROJECT_DIR$/akmartinez.html" />
         <option value="$PROJECT_DIR$/myfirst.html" />
+        <option value="$PROJECT_DIR$/homework1.html" />
       </list>
     </option>
   </component>
@@ -111,6 +119,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -132,7 +141,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -217,10 +225,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="42" y="23" width="1238" height="777" extended-state="1" />
-    <editor active="false" />
+    <frame x="42" y="23" width="1238" height="777" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22617124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22617124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -254,6 +262,35 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/akmartinez.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myfirst.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#BODY#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#2;n#BODY#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/akmartinez.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -305,11 +342,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CCSFCodersHomePageLogo.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/akmartinez.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-11.875">
           <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#BODY#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#p#2;n#BODY#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
