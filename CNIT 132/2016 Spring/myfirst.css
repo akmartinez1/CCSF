@@ -1,0 +1,12 @@
+
+@media print{
+    body{color:black;}
+    header{display:none;}
+}
+
+@media screen{
+    header{background-image: url(trilliumbanner.jpg);height:87px;)
+
+}
+
+
