@@ -10,47 +10,30 @@ public class BankAccount {
     private String accountHolder;
     private String accountNumber;
     private double accountBalance;
-
+    private double interestPercentage;
 
     //Constructors
     public BankAccount(String theAccountHolder, String theAccountNumber, double
             theOpeningDeposit){
 
-        Scanner scan = new Scanner(System.in);
-
-        //Error checking for blank or empty Account Holder
-        while(theAccountHolder.isEmpty()){
-            //Unsure how to prevent any number of blank spaces for error correction.
-            System.out.println("\n\nThe Account Holder name cannot be blank.");
-            System.out.println("Please re-enter the Account Holders name:");
-
-            theAccountHolder=scan.nextLine();
+        if(theAccountHolder.isEmpty()){
+            accountHolder="Default Account Holder";
         }
+        else{accountHolder=theAccountHolder;}
 
-        //Error checking for blank or empty Account Number
-        while(theAccountNumber.isEmpty()){
-            //Unsure how to prevent any number of blank spaces for error correction.
-            System.out.println("\n\nThe Account Number cannot be blank.");
-            System.out.println("Please re-enter the Account Holders name:");
-
-            theAccountNumber=scan.nextLine();
+        if(theAccountNumber.isEmpty()){
+            accountNumber="Default Account Number";
         }
+        else{accountNumber=theAccountNumber;}
 
-        //Error checking and resolving if a negative number is entered for an Opening Balance.
-        while(theOpeningDeposit<0){
-
-            System.out.println("\n\nThe opening deposit must be $0.00 or greater.");
-            System.out.println("Please re-enter an amount for the opening deposit:  ");
-
-            theOpeningDeposit = Double.parseDouble(scan.nextLine());
+        if(theOpeningDeposit<0){
+            accountBalance=0;
         }
+        else{accountBalance=theOpeningDeposit;}
 
-        accountHolder=theAccountHolder;
-        accountNumber=theAccountNumber;
-        accountBalance=theOpeningDeposit;
+        interestPercentage=0;
 
     }
-
 
     //Modifiers
     public void setAccountHolder(String newAccountHolder){accountHolder=newAccountHolder;}
@@ -63,6 +46,12 @@ public class BankAccount {
         accountBalance=openingDeposit;
     }
 
+    public void setInterestPercent(double newInterestPercentage){
+        if(newInterestPercentage<0){
+            interestPercentage=0;
+        }
+        else{interestPercentage=newInterestPercentage;}
+    }
 
     //Accessors
     public String getAccountHolder(){return accountHolder;}
@@ -71,11 +60,14 @@ public class BankAccount {
 
     public double getAccountBalance(){return accountBalance;}
 
+    public double getInaterestPercent(){return interestPercentage;}
+
     //toString
     public String toString(){
-        String s="Account Holder:\t\t" + accountHolder + "\n" +
+        String s="\nAccount Holder:\t\t" + accountHolder + "\n" +
                 "Account Number:\t\t" + accountNumber + "\n" +
-                "Account Balance:\t" + accountBalance + "\n";
+                "Account Balance:\t" + accountBalance + "\n" +
+                "Interest Rate:\t\t" + interestPercentage + "\n\n";
 
         return s;
     }
