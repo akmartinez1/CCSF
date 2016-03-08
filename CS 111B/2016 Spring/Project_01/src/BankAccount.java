@@ -2,7 +2,6 @@
  * Created by alanmartinez on 3/3/16.
  */
 
-import java.util.Scanner;
 
 public class BankAccount {
 
@@ -36,15 +35,21 @@ public class BankAccount {
     }
 
     //Modifiers
-    public void setAccountHolder(String newAccountHolder){accountHolder=newAccountHolder;}
+    public void setAccountHolder(String newAccountHolder) {
+        if (newAccountHolder.isEmpty()) {
+            accountHolder = accountHolder;
+        } else {
+            accountHolder = newAccountHolder;
+        }
+    }
 
     public void setAccountNumber(String newAccountNumber){
-        accountNumber=newAccountNumber;
+        if(newAccountNumber.isEmpty()){
+            accountNumber = accountNumber;}
+        else{accountNumber = newAccountNumber;}
     }
 
-    public void setAccountBalance(double openingDeposit){
-        accountBalance=openingDeposit;
-    }
+    public void setAccountBalance(double newAccountBalance){accountBalance=newAccountBalance;}
 
     public void setInterestPercent(double newInterestPercentage){
         if(newInterestPercentage<0){
@@ -64,7 +69,7 @@ public class BankAccount {
 
     //toString
     public String toString(){
-        String s="\nAccount Holder:\t\t" + accountHolder + "\n" +
+        String s="\n\nAccount Holder:\t\t" + accountHolder + "\n" +
                 "Account Number:\t\t" + accountNumber + "\n" +
                 "Account Balance:\t" + accountBalance + "\n" +
                 "Interest Rate:\t\t" + interestPercentage + "\n\n";
