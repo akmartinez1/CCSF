@@ -1,0 +1,22 @@
+  header { background-image: url('../trilliumbanner.jpg');
+          height:87px;}
+  h2 { text-align:center;
+        color:red;
+		font-style:italic;}
+		
+   .xyz {font-size:150%;
+            color:red;
+			font-family: Verdana;}
+			
+   #tbl {color:blue;
+         font-weight:bold;}
+		 
+   .crazy {color:#8d47ec;}
+   
+   h3 {font-size:200%; color:rgba(0,0,255,0.5); background-color:yellow;}
+  }
+  
+  @media print {
+	  body {color:black;}
+	  header {display:none;}
+  }
