@@ -31,6 +31,6 @@ public class cp_2016_02_29_01_EmployeeFile {
 
         System.out.println("Employee Information Program\n\n");
 
-        System.out.print("Please enter Employee name:  ")
+        System.out.print("Please enter Employee name:  ");
     }
 }
