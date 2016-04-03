@@ -42,7 +42,7 @@ public class javaBankLog {
         System.out.println(account1);
 
 
-        System.out.println("\nThank you for creating an account.\n");
+        System.out.println("Thank you for creating an account.");
 
         do{
             System.out.println(account1);
@@ -61,7 +61,8 @@ public class javaBankLog {
         System.out.println("Enter 1 for Deposit");
         System.out.println("Enter 2 for Withdrawal");
         System.out.println("Enter 3 for Interest");
-        System.out.println("Enter 4 for Account Details Menu");
+        System.out.println("Enter 4 for Account Owner");
+        System.out.println("Enter 5 for Account Number");
         System.out.println("\nEnter 9 to Exit Program");
 
         uiMenuEntry = scan.nextInt();
@@ -73,12 +74,22 @@ public class javaBankLog {
         } else if (uiMenuEntry == 3) {
             interestAccrued(account1);
         }
+        else if(uiMenuEntry==4){
+            changeAccountHolder(account1);
+        }
+        else if(uiMenuEntry==5){
+            changeAccountNumber(account1);
+        }
+        else if(uiMenuEntry==9){
+            exitProgram=true;
+        }
+        else{exitProgram=false;}
 
         return exitProgram;
     }
 
     public static void depositTransaction(BankAccount account1){
-        System.out.println("Deposit Transaction\n");
+        System.out.println("\nDeposit Transaction\n");
 
         Scanner scan = new Scanner(System.in);
         Double uiTransactionAmount;
@@ -91,7 +102,7 @@ public class javaBankLog {
 
 
         System.out.println("\n\nYour current balance is:\t\t" + account1.getAccountBalance());
-        System.out.println("Your Deposit is:\t\t" + uiTransactionAmount);
+        System.out.println("Your Deposit is:\t\t\t\t" + uiTransactionAmount);
         System.out.println("Your new balance will be:\t\t" + (account1.getAccountBalance()+uiTransactionAmount));
 
         isTransactionCorrect=verifyTransaction();
@@ -118,7 +129,7 @@ public class javaBankLog {
 
 
         System.out.println("\n\nYour current balance is:\t\t" + account1.getAccountBalance());
-        System.out.println("Your Withdrawal is:\t\t" + uiTransactionAmount);
+        System.out.println("Your Withdrawal is:\t\t\t\t" + uiTransactionAmount);
         System.out.println("Your new balance will be:\t\t" + (account1.getAccountBalance()-uiTransactionAmount));
 
         isTransactionCorrect=verifyTransaction();
@@ -132,7 +143,7 @@ public class javaBankLog {
     }
 
     public static void interestAccrued(BankAccount account1){
-        System.out.println("Interest Accrued Transaction\n");
+        System.out.println("\nInterest Accrued Transaction\n");
 
         Scanner scan = new Scanner(System.in);
         Double uiTransactionAmount;
@@ -145,7 +156,10 @@ public class javaBankLog {
 
 
         System.out.println("\n\nYour current balance is:\t\t" + account1.getAccountBalance());
-        System.out.println("The Interest Rate entered is:\t\t" + (uiTransactionAmount*.01));
+        System.out.println("The Interest Rate entered is:\t" + uiTransactionAmount + " Percent (" +
+                (uiTransactionAmount*.01) + ")");
+        System.out.println("Interest Accured Amount is:\t\t" + (account1.getAccountBalance()*
+                        (uiTransactionAmount*0.01)));
         System.out.println("Your new balance will be:\t\t" + (account1.getAccountBalance()+(account1.getAccountBalance()*
                 (uiTransactionAmount*0.01))));
 
@@ -153,10 +167,59 @@ public class javaBankLog {
 
         if (isTransactionCorrect == true) {
             account1.setAccountBalance(account1.getAccountBalance()+uiTransactionAmount);
+            account1.setInterestPercent(uiTransactionAmount);
         }
         else;
 
 
+    }
+
+    public static void changeAccountHolder(BankAccount account1){
+        System.out.println("\nChangae Account Holder\n");
+
+        Scanner scan = new Scanner(System.in);
+        String newAccountHolder;
+        int uiTransactionMenu;
+        boolean isTransactionCorrect;
+
+        System.out.println("The current account owner is:\t\t" + account1.getAccountHolder());
+        System.out.println("\nPlease enter the new account owner:");
+        newAccountHolder=scan.nextLine();
+
+
+        System.out.println("\n\nThe current account owner is:\t\t" + account1.getAccountHolder());
+        System.out.println("The new account owner is:\t\t\t" + newAccountHolder);
+
+        isTransactionCorrect=verifyTransaction();
+
+        if (isTransactionCorrect == true) {
+            account1.setAccountHolder(newAccountHolder);
+        }
+        else;
+    }
+
+    public static void changeAccountNumber(BankAccount account1){
+        System.out.println("\nChangae Account Number\n");
+
+        Scanner scan = new Scanner(System.in);
+        String newAccountNumber;
+        int uiTransactionMenu;
+        boolean isTransactionCorrect;
+
+        System.out.println("The current account number is:\t\t" + account1.getAccountNumber());
+        System.out.println("\nPlease enter the new account number:");
+        newAccountNumber=scan.nextLine();
+
+
+        System.out.println("\n\nThe current account number is:\t\t" + account1.getAccountNumber());
+        System.out.println("The new account number is:\t\t\t" + newAccountNumber);
+
+        isTransactionCorrect=verifyTransaction();
+
+        if (isTransactionCorrect == true) {
+            account1.setAccountNumber(newAccountNumber);
+        }
+        else;
     }
 
     public static boolean verifyTransaction(){
