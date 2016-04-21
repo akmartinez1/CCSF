@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Working with Forms - Using inline CSS</title>
+<style type="text/css">
+</style>
+</head>
+<!-- background color for the whole page is #E0E0E0 and the size of the font is 24px -->
+<body>
+<!-- the color is the simple blue #0000FF -->
+  <h1>Form with some style</h1>
+  <p>Please, fill out the form below and thank you in advance!</p>
+<!-- when user clicks the Submit Answers button, the http://hills.ccsf.edu/~cdasilva/thankyou.html page should be shown -->
+  <form method="GET">
+<!-- background color used for the titles of the fields is #33CCFF and the border around the form is #FF0000 -->
+          <p>First Name: <input type="text" name="fname" size="25" maxlength="35" /></p>
+          <p>Last Name: <input type="text" name="lname" size="25" maxlength="35" /></p>
+          <p>Gender <input type="radio" name="gender" value="f">Female <input type="radio" name="gender" value="m">Male</p>
+          <p>Courses for Spring 2010: <select name="course2010" size="1">
+                <option>CNIT-106</option>
+                <option>CNIT-201</option>
+                <option>CNIT-134</option>
+                <option>CNIT-135</option>
+                <option>None</option>
+               </select>
+          </p>
+	  <p><input type="submit" value="Submit Answers">&nbsp;&nbsp;&nbsp;<input type="reset" value="Clear all Form"></p>
+  </form>
+</body>
+</html>

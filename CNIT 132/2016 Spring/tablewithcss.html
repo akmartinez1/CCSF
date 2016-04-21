@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Structural Classes for Tables</title>
+<style type="text/css">
+h1 {text-align:center; color:red;}
+table {margin:0 auto; border:double 3px black;}
+caption {color:blue; font-weight:bold;}
+tr:first-of-type {background-color:yellow;}
+tr:last-of-type {background-color:cyan;}
+tr:nth-of-type(even) {background-color: gray;}
+tr:first-of-type {background-color:yellow;}
+tr:last-of-type {background-color:cyan;}
+td, th {border:solid 1px red;}
+td[colspan="3"] {text-align:center; font-weight:bold; font-style:italic;}
+</style>
+</head>
+<body>
+<h1>Example of different CSS with tables</h1>
+
+<table>
+<caption>Testing CSS3 Pseudo Classes</caption>
+<tr>
+<td colspan="3">Placements - Last Month</td>
+</tr>
+<tr>
+<th>Name</th>
+<th>City</th>
+<th>Job Title</th>
+</tr>
+<tr>
+<td>Lucy Harrisson</td>
+<td>Daly City</td>
+<td>Help Desk Support</td>
+</tr>
+<tr>
+<td>Jonathan Doug</td>
+<td>San Francisco</td>
+<td>Programmer</td>
+</tr>
+<tr>
+<td>Janet Wilson</td>
+<td>San Francisco</td>
+<td>Web Developer Front-End</td>
+</tr>
+<tr>
+<td colspan="3">Recruiter = Paul Jollie</td>
+</tr>
+</table>
+</body>
+</html>

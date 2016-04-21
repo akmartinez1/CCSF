@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact Us</title>
+<style type="text/css">
+	h1 {text-align:center;
+	    text-style:italic;
+	    color:#FF0000;
+	   }
+</style>
+<script type="text/javascript">
+<!-- <![CDATA[
+function validateForm1()
+{
+   if (document.forms['contact'].Name.value == "" )
+      {alert("You need to type your Name.");
+        return false;
+   } // end if
+   if (document.forms['contact'].Email.value == "" )
+      {alert("You need to type your Email.");
+        return false;
+   } // end if
+   if (document.forms['contact'].Email.value.indexOf("@") < 1)
+      {alert("You must enter a valid email");
+        return false;
+   } // end if
+   return true;
+      
+} // end function validateForm1
+
+// ]]> -->
+</script>	
+</head>
+
+<body>
+<h1>Simple Form</h1>
+<p>P.O. Box 2800<br />
+Livermore, CA 94551<br />
+925-337-0416</p>
+
+<h1>Form to contact any volunteer</h1>
+<form action="http://fog.ccsf.edu/~cdasilva/contact1.php" method="post" name="contact" id="contact" onsubmit="return validateForm1( );"> 
+<table> 
+	<tr>
+	  <td colspan=2>A * indicates a field is required</td>
+	</tr> 
+	<tr>
+	  <td height="31">Staff Member:</td>
+	  <td><select name="sendto">
+	     <option value="President">President</option>
+	     <option value="Secretary">Secretary</option>
+	     <option value="Treasurer">Treasurer</option>
+	     <option value="Director1">Director - Art Ewart</option>
+	     <option value="Director2">Director - Bill Flower</option>
+	     <option value="Lake">Lake Tahoe-Reno Coordinator</option>
+	     <option value="HW50">Highway 50 Coordinator</option>
+	     <option value="Lands">Lands Monitoring Coordinator</option>
+	     <option value="Member">Membership and Events</option>
+	     </select>
+	  </td>
+	</tr> 
+	<tr>
+	  <td>*&nbsp;&nbsp;Name:</td>
+	  <td><input size=35 name="Name"></td>
+	</tr> 
+	<tr>
+	  <td>*&nbsp;&nbsp;Email:</td>
+	  <td><input size=45 name="Email"></td>
+	</tr> 
+	<tr>
+	  <td colspan=2>Message:</td>
+	</tr> 
+	<tr>
+	  <td colspan=2><textarea name="Message" rows=5 cols=35></textarea></td>
+	</tr> 
+	<tr>
+	  <td colspan=2><input type=submit name="send" value="Submit"></td>
+	</tr> 
+</table> 
+</form> 
+</body>
+</html>

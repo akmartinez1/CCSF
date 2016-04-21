@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Transition and Transform CSS3 Properties</title>
+<style type="text/css">
+img {float:right;
+     -webkit-transform: rotate(3deg);
+     -moz-transform: rotate(3deg); 
+     -o-transform: rotate(3deg);
+     -ms-transform: rotate(3deg);  
+     transform: rotate(3deg); }
+
+a:hover {-webkit-transition: background-color 3s linear 0.5s;
+         -moz-transition: background-color 3s linear 0.5s;
+         -o-transition: background-color 3s linear 0.5s;
+         transition: background-color 3s linear 0.5s; 
+         background-color: #009999;
+         color:#FFFFFF;}
+
+#wrapper {width:80%;
+          margin:1em auto 0 auto;
+          border: solid black 1em;
+          padding: 0.5em;}
+
+.clearing {clear:both; }
+</style>
+</head>
+<body>
+<div id="wrapper">
+<p><img src="lighthouseisland.jpg" width="125" height="172">Here is the image of a beautiful light house in an island. This light house should be shown a little bit inclined according to the CSS shown here. Here is the link to <a href="http://www.ccsf.edu" target="_blank">City College main page</a>. When the mouse goes over this link, you should see the transition working.<br>
+Try change the rotation number to see what happens to the image and what happens to the text that is flowing in the left side of the picture.</p> 
+<p class="clearing">This paragraph will not be showing in the left side of the picture. It will be showing under the picture due to the class that is being used for this paragraph.</p>
+</div>
+</body>
+</html>    

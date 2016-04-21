@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Font Face</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Testing a font face downloaded from Fontex">
+  <style>
+    @font-face { font-family: 'myownfont';
+	             src: url('../font/LobsterTwo-Bold.otf');
+				 }
+	p {font-family: myownfont;}
+  </style>
+</head>
+<body>
+<p>A paragraph outside the main div</p>
+<div id="main">
+  <div id="header">
+     <h1>Testing font-face</h1>
+     <p>Paragraph using the new font</p>
+  </div>
+  <hr>
+  <div id="content">
+     <article>
+       <h2>Downloaded font</h2>
+       <p>Paragraphs are the only tags using the new font</p>
+     </article>
+     <article>
+       <h2>Included reference to font in CSS</h2>
+       <p>Another paragraph using new font</p>
+     </article>
+  </div>
+</div>
+</body>
+</html>
